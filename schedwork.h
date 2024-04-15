@@ -8,7 +8,7 @@
 // type for the ID of a worker
 typedef unsigned int Worker_T;
 // n-by-k Matrix of each of the k workers' availability over an n-day period
-typedef std::vector<std::vector<bool>> AvailabilityMatrix;
+typedef std::vector<std::vector<bool> > AvailabilityMatrix;
 
 // n-by-d matrix with the d worker IDs who are scheduled 
 // to work on each of the n days
@@ -37,5 +37,12 @@ bool schedule(
     const size_t maxShifts,
     DailySchedule& sched
 );
+
+bool schedHelper(const AvailabilityMatrix& avail,
+    const size_t dailyNeed,
+    const size_t maxShifts,
+    DailySchedule& sche, size_t whatDay, std::vector<int> workerShifts, int worker);
+
+//bool isValidPlacement(DailySchedule& sche,size_t whatDay, Worker_T person,const size_t dailyNeed, const size_t maxShifts);
 
 #endif

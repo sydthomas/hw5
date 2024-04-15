@@ -22,4 +22,10 @@ std::set<std::string> wordle(
     const std::string& floating,
     const std::set<std::string>& dict);
 
+//HELPER FUNCTIONS
+
+void wordleHelper(std::string in, std::string floating, const std::set<std::string>& dict, std::set<std::string>& wordleSet, size_t nextIndex);
+bool isValidWordleWord(std::string possibleWord, const std::set<std::string>& dict);
+//std::set<std::string> accurateValidWords(const std::set<std::string>& createdWordsSet, const std::set<std::string>& dict);
+
 #endif
